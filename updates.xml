@@ -1,0 +1,18 @@
+<isys>
+<updates>
+<update>
+<title>i-doit v1.9.1</title>
+<version>1.9.1</version>
+<requirement>
+<revision>21900</revision>
+<version>1.9</version>
+</requirement>
+<directory>v1.9.1</directory>
+<revision>21901</revision>
+<release>2017-06-26</release>
+<filename>
+https://login.i-doit.com/downloads/idoit-open-1.9-update.zip
+</filename>
+</update>
+</updates>
+</isys>
