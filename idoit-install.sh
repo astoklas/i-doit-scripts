@@ -968,8 +968,6 @@ function prepareIDoit {
     log "Found i-doit $variant $version (released on ${release_date})"
     log "Downloading $file $url"
     
-    url = ""
-    
     "$WGET_BIN" --quiet -O "$file" "$url" || \
         abort "Unable to download installation file"
 
