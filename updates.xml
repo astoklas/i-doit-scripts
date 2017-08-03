@@ -1,18 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <isys>
-<updates>
-<update>
-<title>i-doit v1.9.1</title>
-<version>1.9.1</version>
-<requirement>
-<revision>21900</revision>
-<version>1.9</version>
-</requirement>
-<directory>v1.9.1</directory>
-<revision>21901</revision>
-<release>2017-06-26</release>
-<filename>
-https://login.i-doit.com/downloads/idoit-open-1.9-update.zip
-</filename>
-</update>
-</updates>
+    <updates>
+        <update>
+            <title>i-doit v1.8.3</title>
+            <version>1.8.3</version>
+            <requirement>
+                <revision>21800</revision>
+                <version>1.8</version>
+            </requirement>
+            <directory>v1.8.3</directory>
+            <revision>21803</revision>
+            <release>2017-03-17</release>
+            <filename>https://downloads.sourceforge.net/project/i-doit/i-doit/1.8.3/idoit-open-1.8.3-update.zip</filename>
+        </update>
+        <update>
+            <title>i-doit v1.9</title>
+            <version>1.9</version>
+            <requirement>
+                <revision>21800</revision>
+                <version>1.8</version>
+            </requirement>
+            <directory>v1.9</directory>
+            <revision>21900</revision>
+            <release>2017-05-31</release>
+            <!--<filename>https://downloads.sourceforge.net/project/i-doit/i-doit/1.9/idoit-open-1.9-update.zip</filename>-->
+            <filename>https://login.i-doit.com/downloads/idoit-open-1.9-update.zip</filename>
+        </update>
+        <update>
+        	<title>i-doit v1.9.1</title>
+        	<version>1.9.1</version>
+        	<requirement>
+        		<revision>21900</revision>
+        		<version>1.9</version>
+        	</requirement>
+        	<directory>v1.9.1</directory>
+        	<revision>21901</revision>
+        	<release>2017-06-26</release>
+        	<filename>https://login.i-doit.com/downloads/idoit-open-1.9.1-update.zip</filename>
+        </update>
+    </updates>
 </isys>
