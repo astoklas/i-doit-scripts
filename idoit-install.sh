@@ -1138,6 +1138,7 @@ function deployScript {
 }
 
 function setup {
+    log "Setup installation, using $TMP_DIR as temp location"
     test `whoami` = "root" || abort "Superuser rights required"
 
     mkdir -p "$TMP_DIR" || abort "Unable to create temporary directory"
