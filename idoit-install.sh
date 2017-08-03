@@ -942,7 +942,8 @@ function prepareIDoit {
         sed "s/<\/filename>//" | \
         sed "s/-update.zip/.zip/" | \
         awk '{print $1}'`
-
+    
+    log "URL for download i-doit $url"
     test -n "$url" || abort "Missing URL"
 
     local version=`cat "${TMP_DIR}/updates.xml" | \
@@ -951,7 +952,8 @@ function prepareIDoit {
         sed "s/<version>//" | \
         sed "s/<\/version>//" | \
         awk '{print $1}'`
-
+    
+    log "Version to be install $version"
     test -n "$version" || abort "Missing version"
 
     local release_date=`cat "${TMP_DIR}/updates.xml" | \
@@ -964,7 +966,8 @@ function prepareIDoit {
     test -n "$release_date" || abort "Missing release date"
 
     log "Found i-doit $variant $version (released on ${release_date})"
-
+    log "Downloading $file $url"
+    
     "$WGET_BIN" --quiet -O "$file" "$url" || \
         abort "Unable to download installation file"
 
