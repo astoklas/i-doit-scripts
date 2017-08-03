@@ -968,9 +968,11 @@ function prepareIDoit {
     log "Found i-doit $variant $version (released on ${release_date})"
     log "Downloading $file $url"
     
-    "$WGET_BIN" --quiet -O "$file" "$url" || \
-        abort "Unable to download installation file"
-
+#    "$WGET_BIN" --quiet -O "$file" "$url" || \
+#        abort "Unable to download installation file"
+    "$WGET_BIN" -O "$file" "$url" || \
+         abort "Unable to download installation file"
+         
     cp "$file" "${INSTALL_DIR}/i-doit.zip" || \
         abort "Unable to copy installation file"
 
