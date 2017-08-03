@@ -935,9 +935,6 @@ function prepareIDoit {
         abort "Unable to fetch file from '${update_file_url}'"
     )
 
-    log "Using my own updates.xml from github - Hack astoklas"
-    cp "./updates.xml" "$TMP_DIR/updates.xml"
-
     local url=`cat "${TMP_DIR}/updates.xml" | \
         tail -n4 | \
         head -n1 | \
@@ -1147,6 +1144,8 @@ function setup {
     test `whoami` = "root" || abort "Superuser rights required"
 
     mkdir -p "$TMP_DIR" || abort "Unable to create temporary directory"
+    log "Using my own updates.xml from github - Hack astoklas"
+    cp "./updates.xml" "$TMP_DIR/updates.xml"
 }
 
 function tearDown {
