@@ -39,7 +39,7 @@ MARIADB_IDOIT_USERNAME="idoit"
 MARIADB_IDOIT_PASSWORD="idoit"
 IDOIT_DEFAULT_TENANT="CMDB"
 INSTALL_DIR="/var/www/html"
-DATE=`date +%Y-m-d`
+DATE=`date +%Y-%m-%d`
 TMP_DIR="/tmp/i-doit_${DATE}"
 UPDATE_FILE_PRO="https://i-doit.com/updates.xml"
 UPDATE_FILE_OPEN="https://i-doit.org/updates.xml"
@@ -936,7 +936,7 @@ function prepareIDoit {
     )
 
     local url=`cat "${TMP_DIR}/updates.xml" | \
-        tail -n5 | \
+        tail -n4 | \
         head -n1 | \
         sed "s/<filename>//" | \
         sed "s/<\/filename>//" | \
@@ -947,17 +947,17 @@ function prepareIDoit {
     test -n "$url" || abort "Missing URL"
 
     local version=`cat "${TMP_DIR}/updates.xml" | \
-        tail -n13 | \
+        tail -n12 | \
         head -n1 | \
         sed "s/<version>//" | \
         sed "s/<\/version>//" | \
         awk '{print $1}'`
-    
+ 
     log "Version to be install $version"
     test -n "$version" || abort "Missing version"
 
     local release_date=`cat "${TMP_DIR}/updates.xml" | \
-        tail -n6 | \
+        tail -n5 | \
         head -n1 | \
         sed "s/<release>//" | \
         sed "s/<\/release>//" | \
@@ -967,6 +967,8 @@ function prepareIDoit {
 
     log "Found i-doit $variant $version (released on ${release_date})"
     log "Downloading $file $url"
+    
+    url = ""
     
     "$WGET_BIN" --quiet -O "$file" "$url" || \
         abort "Unable to download installation file"
